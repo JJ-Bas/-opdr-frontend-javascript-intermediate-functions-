@@ -60,39 +60,15 @@ typeOfEmail("novi.nlaapjesk@outlook.com")
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
 console.log("-opdracht-3-")
 
-function checkEmailValidity(emailAdress) {
-    if (emailAdress.includes("@")) {
-        return console.log("@ true is mail")
-    }
-    if (emailAdress.lastIndexOf(".")) {
-        return console.log(". true no mail")
-    }
-    if (emailAdress.includes(",")) {
-        return console.log(", true no mail")
-    }
+function checkEmailValidity(email) {
+    return email.includes("@") && !email.includes(",") && !(`${email.length}` -1 === (email.lastIndexOf(".")))
 }
 
+console.log(checkEmailValidity("n.eeken@novi.nl"))
+console.log(checkEmailValidity("tessmellink@novi.nl"))
+console.log(checkEmailValidity("n.eekenanovi.nl"))
+console.log(checkEmailValidity("n.eeken@novinl."))
+console.log(checkEmailValidity("tessmellink@novi,nl"))
 
-checkEmailValidity("n.eeken@novi.nl")
-checkEmailValidity("tessmellink@novi.nl")
-checkEmailValidity("n.eekenanovi.nl")
-checkEmailValidity("n.eeken@novinl.")
-checkEmailValidity("tessmellink@novi,nl")
-/*----------------Functie voorbeeld van Eliza met Substring en een for-loop---------------------*/
 
-/*
-console.log("-Eliza oplossing opdracht 1-")
 
-function getEmailDomain(eMail) {
-    let domain = "";
-    for (let i = 0; i < eMail.length; i++) {
-        if (eMail.indexOf('@') === i) {
-            domain = eMail.substring(i + 1, eMail.length);
-            console.log(domain);
-        }
-    }
-    return domain;
-}
-
-let domain = getEmailDomain("mazilemka@gmail.com");
-console.log(domain);*/
