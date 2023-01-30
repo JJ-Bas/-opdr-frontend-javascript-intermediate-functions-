@@ -61,7 +61,7 @@ typeOfEmail("novi.nlaapjesk@outlook.com")
 console.log("-opdracht-3-")
 
 function checkEmailValidity(email) {
-    return email.includes("@") && !email.includes(",") && !(`${email.length}` -1 === (email.lastIndexOf(".")))
+    return email.includes("@") && !email.includes(",") && !(email.length - 1 === email.lastIndexOf("."))
 }
 
 console.log(checkEmailValidity("n.eeken@novi.nl"))
